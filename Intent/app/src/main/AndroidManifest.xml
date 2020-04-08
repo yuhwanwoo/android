@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".ExamFirstActivity"></activity>
+        <activity android:name=".ExamSecondActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ReturnDataSecondActivity" />
+        <activity android:name=".SecondActivity" />
+        <activity android:name=".BaicAppRun">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,5 +23,5 @@
             </intent-filter>
         </activity>
     </application>
-
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 </manifest>

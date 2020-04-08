@@ -17,9 +17,9 @@ public class ViewHolder {
 
     public ViewHolder(View parentView) {
         this.myImg = parentView.findViewById(R.id.img);
-        this.nameView = parentView.findViewById(R.id.txtcust1);
-        this.dateView = parentView.findViewById(R.id.txtcust2);
-        this.comView = parentView.findViewById(R.id.txtcust3);
-        this.chkView=parentView.findViewById(R.id.check);
+        this.nameView = parentView.findViewById(R.id.name);
+        this.dateView = parentView.findViewById(R.id.date);
+        this.comView = parentView.findViewById(R.id.resultinfo);
+        this.chkView=parentView.findViewById(R.id.exam_chk);
     }
 }
