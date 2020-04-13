@@ -1,0 +1,2 @@
+rootProject.name='supportt_lib'
+include ':app'
