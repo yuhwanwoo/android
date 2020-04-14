@@ -5,15 +5,16 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import multi.android.supportt_lib.R;
 
-public class FragmentMain extends AppCompatActivity {
-    view1 view1 = new view1();
-    view2 view2 = new view2();
-    view3 view3 = new view3();
+public class FragmentExam01 extends AppCompatActivity {
+    ViewFragment1 viewFragment1 = new ViewFragment1();
+    ViewFragment2 viewFragment2 = new ViewFragment2();
+    ViewFragment3 viewFragment3 = new ViewFragment3();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +22,11 @@ public class FragmentMain extends AppCompatActivity {
 
         setContentView(R.layout.activity_view_pager_main);
 
-        Button btnFirst = findViewById(R.id.button);
+        /*Button btnFirst = findViewById(R.id.button);
         Button btnSecond = findViewById(R.id.button2);
         Button btnThird = findViewById(R.id.button3);
-
-        btnFirst.setOnClickListener(new View.OnClickListener() {
+*/
+       /* btnFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setFragment("first");
@@ -42,11 +43,41 @@ public class FragmentMain extends AppCompatActivity {
             public void onClick(View v) {
                 setFragment("third");
             }
-        });
+        });*/
 
     }
 
-    public void setFragment(String name) {
+    //강사님 풀이
+
+    public void btn_click(View view){
+        setFragment(view.getTag().toString());
+    }
+
+    public void setFragment(String idx){
+        Log.d("fragment",idx);
+        FragmentManager fragmentManager =getSupportFragmentManager();
+        //프레그먼트의 변화를 관리하는 객체
+        FragmentTransaction transaction=fragmentManager.beginTransaction();
+        switch (idx){
+            case "0":
+                transaction.replace(R.id.container,viewFragment1);
+                break;
+            case "1":
+                transaction.replace(R.id.container,viewFragment2);
+                break;
+            case "2":
+                transaction.replace(R.id.container,viewFragment3);
+                break;
+        }
+        transaction.commit();
+    }
+
+
+
+
+
+    //내풀이
+    /*public void setFragment(String name) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         switch (name) {
@@ -64,5 +95,5 @@ public class FragmentMain extends AppCompatActivity {
                 break;
         }
         transaction.commit();
-    }
+    }*/
 }

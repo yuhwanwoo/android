@@ -13,9 +13,9 @@ import multi.android.supportt_lib.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class view3 extends Fragment {
+public class ViewFragment3 extends Fragment {
 
-    public view3() {
+    public ViewFragment3() {
         // Required empty public constructor
     }
 
