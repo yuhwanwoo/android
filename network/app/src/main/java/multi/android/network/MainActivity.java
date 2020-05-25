@@ -2,6 +2,8 @@ package multi.android.network;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,11 +20,13 @@ import multi.android.network.R;
 
 public class MainActivity extends AppCompatActivity {
     TextView clientInfo;
+    @SuppressLint("SourceLockedOrientationActivity")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         clientInfo = findViewById(R.id.textInfo);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     }
     public void btn_connect(View v){
        new NetworkClient().start();
